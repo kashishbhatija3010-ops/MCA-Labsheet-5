@@ -210,7 +210,6 @@ print("Number of Steps:", len(path) - 1)
 # Q19
 learning_rates = [0.1, 0.5, 0.8, 1.0]
 results = {}
-
 for lr in learning_rates:
     q = np.zeros((env.observation_space.n, env.action_space.n))
     for episode in range(5000):
