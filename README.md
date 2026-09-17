@@ -63,14 +63,12 @@ print("Total Reward:", total_reward)
 
 # Q6
 q_table = np.zeros((env.observation_space.n, env.action_space.n))
-
 alpha = 0.8
 gamma = 0.95
 epsilon = 1.0
 epsilon_decay = 0.995
 epsilon_min = 0.01
 episodes = 10000
-
 for episode in range(episodes):
     state, _ = env.reset()
     done = False
@@ -94,13 +92,11 @@ q_table_df = pd.DataFrame(
     q_table,
     columns=["Left", "Down", "Right", "Up"]
 )
-
 print(q_table_df)
 
 # Q8
 success = 0
 test_episodes = 1000
-
 for episode in range(test_episodes):
     state, _ = env.reset()
     done = False
