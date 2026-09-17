@@ -107,12 +107,10 @@ for episode in range(test_episodes):
         state = next_state
         if reward == 1:
             success += 1
-
 print("Success Rate:", (success / test_episodes) * 100, "%")
 
 # Q9
 actions = ["Left", "Down", "Right", "Up"]
-
 for state in range(env.observation_space.n):
     best_action = actions[np.argmax(q_table[state])]
     print("State", state, "->", best_action)
@@ -121,7 +119,6 @@ for state in range(env.observation_space.n):
 state, _ = env.reset()
 done = False
 total_reward = 0
-
 while not done:
     action = np.argmax(q_table[state])
     next_state, reward, terminated, truncated, _ = env.step(action)
@@ -133,7 +130,6 @@ print("Final State:", state)
 
 # Q11
 policy = np.argmax(q_table, axis=1)
-
 for state, action in enumerate(policy):
     print("State", state, "->", actions[action])
 
