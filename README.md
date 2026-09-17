@@ -24,9 +24,7 @@ print("Number of Actions:", env.action_space.n)
 
 # Q4
 observation, info = env.reset()
-
 print("Initial State:", observation)
-
 for step in range(5):
     action = env.action_space.sample()
     next_observation, reward, terminated, truncated, info = env.step(action)
